@@ -20,7 +20,8 @@ class Transfer
     sender.withdraw(@amount)
     receiver.deposit(@amount)
     @status = "complete"
-    
+    if @status == "complete"
+      
   end
   
 end
