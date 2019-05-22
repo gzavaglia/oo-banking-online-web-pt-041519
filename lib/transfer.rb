@@ -35,7 +35,7 @@ class Transfer
       receiver.withdraw(@amount)
       @status = "reversed"
     else
-      "you tell me"
+      "Transaction was not executed. It cannot be reversed"
     end
   end
 end
