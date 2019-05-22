@@ -1,3 +1,4 @@
+require_relative "../lib/transfer"
 class Transfer
   attr_accessor :sender, :receiver, :status, :amount
   def initialize(sender, receiver, transfer_amount)
@@ -6,4 +7,13 @@ class Transfer
     @amount = transfer_amount
     @status = 'pending'
   end
+  
+  def valid?
+    if sender.valid? && receiver.valid?
+      return true 
+    else 
+      return false 
+    end
+  end
+  
 end
