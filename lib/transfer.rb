@@ -35,5 +35,6 @@ class Transfer
       receiver.withdraw(@amount)
     else
       "you tell me"
+    end
   end
 end
