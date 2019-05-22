@@ -21,6 +21,7 @@ class Transfer
     if @status == "complete"
       puts "Transaction was already excuted"
     elsif sender.valid? == false
+      @status = ""
       puts "Transaction rejected. Please check your account balance."
     else 
       sender.withdraw(@amount)
