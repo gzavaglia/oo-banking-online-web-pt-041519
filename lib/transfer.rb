@@ -17,11 +17,16 @@ class Transfer
   end
   
   def execute_transaction
-    sender.withdraw(@amount)
-    receiver.deposit(@amount)
-    @status = "complete"
+    
     if @status == "complete"
-      
+      puts "Transaction was already excuted"
+    elsif sender.valid? == false
+      puts "Transaction rejected. Please check your account balance."
+    else 
+      sender.withdraw(@amount)
+      receiver.deposit(@amount)
+      @status = "complete"
+    end
   end
   
 end
